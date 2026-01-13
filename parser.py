@@ -29,3 +29,10 @@ def get_user_ratings(username):
         })
 
     return films
+
+def save_to_json(data, filename="results.json"):
+    """
+    Сохраняет результаты парсинга в JSON-файл.
+    """
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=2)
