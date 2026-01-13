@@ -36,3 +36,9 @@ def save_to_json(data, filename="results.json"):
     """
     with open(filename, "w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
+
+if __name__ == "__main__":
+    username = "letterboxd_username"  # замените на реальное имя пользователя
+    films = get_user_ratings(username)
+    save_to_json(films)
+    print("Данные сохранены в файл results.json")
